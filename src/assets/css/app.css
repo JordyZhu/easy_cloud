@@ -1,0 +1,18 @@
+html, body {
+  position: relative;
+  width: 100%;
+}
+
+html {
+  min-height: 100%;
+  background: #f5f4ed;
+}
+
+#app {
+  width: 100%;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
