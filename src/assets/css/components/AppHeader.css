@@ -1,4 +1,5 @@
 .AppHeader {
+  flex-grow: 0;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -16,16 +17,33 @@
   line-height: 30px;
   font-size: 22px;
   font-weight: 900;
+  letter-spacing: 2px;
   color: #212121;
 }
 
+.AppHeader-tabs {
+  display: flex;
+  flex-direction: row;
+}
+
+.AppHeader-tab {
+  margin-right: 24px;
+}
+
 .AppHeader-link {
-  padding: 0 12px;
   line-height: 30px;
   font-weight: 700;
   color: #212121;
 }
 
 .AppHeader-link:hover {
-  color: #fc791c;
+  color: #c6f227;
+}
+
+.AppHeader-link.router-link-exact-active {
+  border-bottom: 1px solid #212121;
+}
+
+.AppHeader-link.router-link-exact-active:hover {
+  border-color: #c6f227;
 }

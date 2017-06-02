@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app" v-bind:class="className">
     <AppHeader />
-    <router-view></router-view>
+    <transition name="slide">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import AppHeader from '@/components/AppHeader'
 import './assets/css/reset.css'
-import './assets/css/app.css'
+import './assets/css/App.css'
 
 export default {
   name: 'app',
@@ -16,7 +18,9 @@ export default {
     AppHeader
   },
   data () {
-    return {}
+    return {
+      className: `App-${this.$route.name}`
+    }
   }
 }
 </script>

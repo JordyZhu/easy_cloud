@@ -1,11 +1,16 @@
 <template>
   <div class="AppHeader">
     <div class="AppHeader-content">
-      <a class="AppHeader-logo" href="/">{{ name }}</a>
+      <router-link class="AppHeader-logo" to="/">{{ name }}</router-link>
       <div class="AppHeader-right">
         <ul class="AppHeader-tabs">
-          <li v-for="{link, name} in tabs">
-            <a class="AppHeader-link" v-bind:href="link">{{ name }}</a>
+          <li class="AppHeader-tab" v-for="{link, name} in tabs">
+            <router-link
+              class="AppHeader-link"
+              v-bind:to="link"
+            >
+              {{ name }}
+            </router-link>
           </li>
         </ul>
       </div>
@@ -18,7 +23,7 @@ import {APP_NAME} from '../constants.js'
 import '../assets/css/components/AppHeader.css'
 
 export default {
-  name: 'app-header',
+  name: 'appHeader',
   data () {
     return {
       name: APP_NAME,
@@ -26,6 +31,10 @@ export default {
         {
           name: 'HOME',
           link: '/'
+        },
+        {
+          name: 'ABOUT',
+          link: '/about'
         }
       ]
     }
