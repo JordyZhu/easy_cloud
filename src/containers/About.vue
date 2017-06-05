@@ -15,7 +15,6 @@
 
 <script>
 import {MY_NAME, MY_DESC, MY_PHONE, MY_EMAIL} from '../constants.js'
-import '../assets/css/containers/About.css'
 
 export default {
   name: 'about',
@@ -29,3 +28,5 @@ export default {
   }
 }
 </script>
+
+<style src="../assets/css/containers/About.postcss"></style>

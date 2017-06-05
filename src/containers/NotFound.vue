@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import '../assets/css/containers/NotFound.css'
-
 export default {
   name: 'notFound',
   data () {
@@ -16,3 +14,5 @@ export default {
   }
 }
 </script>
+
+<style src="../assets/css/containers/NotFound.postcss"></style>

@@ -1,8 +1,24 @@
+@import "../variables.postcss";
+
 .AppHeader {
   flex-grow: 0;
   display: flex;
   justify-content: center;
   width: 100%;
+
+  &.AppHeader--fold {
+    background: $blue;
+
+    .AppHeader-content {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    .AppHeader-logo,
+    .AppHeader-link {
+      color: #fff;
+    }
+  }
 }
 
 .AppHeader-content {
@@ -18,7 +34,7 @@
   font-size: 22px;
   font-weight: 900;
   letter-spacing: 2px;
-  color: #212121;
+  color: $black;
 }
 
 .AppHeader-tabs {
@@ -33,17 +49,17 @@
 .AppHeader-link {
   line-height: 30px;
   font-weight: 700;
-  color: #212121;
-}
+  color: $black;
 
-.AppHeader-link:hover {
-  color: #c6f227;
-}
+  &:hover {
+    color: $green;
+  }
 
-.AppHeader-link.router-link-exact-active {
-  border-bottom: 1px solid #212121;
-}
+  &.router-link-exact-active {
+    border-bottom: 1px solid $black;
+  }
 
-.AppHeader-link.router-link-exact-active:hover {
-  border-color: #c6f227;
+  &.router-link-exact-active:hover {
+    border-color: $green;
+  }
 }

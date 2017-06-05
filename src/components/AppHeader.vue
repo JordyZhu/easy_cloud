@@ -20,7 +20,6 @@
 
 <script>
 import {APP_NAME} from '../constants.js'
-import '../assets/css/components/AppHeader.css'
 
 export default {
   name: 'appHeader',
@@ -41,3 +40,5 @@ export default {
   }
 }
 </script>
+
+<style src="../assets/css/components/AppHeader.postcss"></style>

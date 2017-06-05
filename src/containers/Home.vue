@@ -4,8 +4,6 @@
 </template>
 
 <script>
-  import '../assets/css/containers/Home.css'
-
   export default {
     name: 'home',
     data () {
@@ -13,3 +11,5 @@
     }
   }
 </script>
+
+<style src="../assets/css/containers/Home.postcss"></style>
