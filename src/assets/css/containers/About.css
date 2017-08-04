@@ -1,4 +1,4 @@
-@import "../variables.postcss";
+@import "../variables.css";
 
 .About {
   flex-grow: 1;

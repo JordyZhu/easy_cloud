@@ -28,11 +28,11 @@ export default {
       name: APP_NAME,
       tabs: [
         {
-          name: 'HOME',
+          name: '每日推荐',
           link: '/'
         },
         {
-          name: 'ABOUT',
+          name: '关于站长',
           link: '/about'
         }
       ]
@@ -41,4 +41,4 @@ export default {
 }
 </script>
 
-<style src="../assets/css/components/AppHeader.postcss"></style>
+<style src="../assets/css/components/AppHeader.css"></style>

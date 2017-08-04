@@ -15,4 +15,4 @@ export default {
 }
 </script>
 
-<style src="../assets/css/containers/NotFound.postcss"></style>
+<style src="../assets/css/containers/NotFound.css"></style>

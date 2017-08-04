@@ -1,25 +1,34 @@
 <template>
   <div class="Home">
-    {{ content }}
+    <div class="Home-main">
+      <div class="Home-everydayRecommend">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import {Http} from 'vue-resource'
+  import Swiper from 'vue-swiper'
+  import ImageLink from '../components/Link'
 
   export default {
     name: 'home',
-    data () {
-      return {}
+    components: {
+      Swiper,
+      ImageLink
     },
-    computed: {
-      content () {
-        Http.get('http://www.baidu.com').then(response => {
-          return response.body
-        })
+    data () {
+      return {
+        banners: [
+          {
+            image: '/aaa/a.jpg',
+            text: 'aaaa',
+            link: '/'
+          }
+        ]
       }
     }
   }
 </script>
 
-<style src="../assets/css/containers/Home.postcss"></style>
+<style src="../assets/css/containers/Home.css"></style>

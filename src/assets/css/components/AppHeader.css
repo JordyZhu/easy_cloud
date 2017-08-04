@@ -1,4 +1,4 @@
-@import "../variables.postcss";
+@import "../variables.css";
 
 .AppHeader {
   flex-grow: 0;

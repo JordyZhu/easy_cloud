@@ -21,5 +21,5 @@ export default {
 }
 </script>
 
-<style src="./assets/css/reset.postcss"></style>
-<style src="./assets/css/App.postcss"></style>
+<style src="./assets/css/reset.css"></style>
+<style src="./assets/css/App.css"></style>

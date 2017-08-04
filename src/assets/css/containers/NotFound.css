@@ -1,4 +1,4 @@
-@import "../variables.postcss";
+@import "../variables.css";
 
 .NotFound {
   flex-grow: 1;

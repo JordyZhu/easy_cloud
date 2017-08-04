@@ -29,4 +29,4 @@ export default {
 }
 </script>
 
-<style src="../assets/css/containers/About.postcss"></style>
+<style src="../assets/css/containers/About.css"></style>
