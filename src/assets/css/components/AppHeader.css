@@ -10,8 +10,8 @@
     background: $blue;
 
     .AppHeader-content {
-      padding-top: 25px;
-      padding-bottom: 25px;
+      padding-top: 1.5625em;
+      padding-bottom: 1.5625em;
     }
 
     .AppHeader-logo,
@@ -25,16 +25,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 70px 25px;
+  padding: 4.375em 1.5625em;
   width: 1000px;
 }
 
 .AppHeader-logo {
-  line-height: 30px;
-  font-size: 22px;
+  line-height: 1.875em;
+  font-size: 1.375em;
   font-weight: 900;
   letter-spacing: 2px;
   color: $black;
+}
+
+.AppHeader-right {
+  display: flex;
+  align-items: center;
 }
 
 .AppHeader-tabs {
@@ -43,11 +48,12 @@
 }
 
 .AppHeader-tab {
-  margin-right: 24px;
+  margin-right: 1.5em;
+  font-size: 1em;
 }
 
 .AppHeader-link {
-  line-height: 30px;
+  line-height: 1.875em;
   font-weight: 700;
   color: $black;
 
@@ -61,5 +67,26 @@
 
   &.router-link-exact-active:hover {
     border-color: $green;
+  }
+}
+
+@media (min-device-width : 375px) and (max-device-width : 667px) {
+  .AppHeader-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .AppHeader-right {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .AppHeader-tab {
+      margin: 0;
+      width: 50%;
+    }
   }
 }

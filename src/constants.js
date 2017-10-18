@@ -1,8 +1,8 @@
-export const APP_NAME = '好奇社'
+export const APP_NAME = 'Jie\'s Blog'
 
-export const MY_NAME = '朱杰'
+export const MY_NAME = 'Jie Zhu'
 
-export const MY_DESC = '前端开发工程师 / 设计爱好者'
+export const MY_DESC = 'Front-End Software Engineer / Designer'
 
 export const MY_PHONE = '17710146808'
 

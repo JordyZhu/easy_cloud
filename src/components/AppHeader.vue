@@ -28,14 +28,19 @@ export default {
       name: APP_NAME,
       tabs: [
         {
-          name: '每日推荐',
+          name: 'HOME',
           link: '/'
         },
         {
-          name: '关于站长',
+          name: 'EXPLORE',
+          link: '/explore'
+        },
+        {
+          name: 'ABOUT',
           link: '/about'
         }
-      ]
+      ],
+      isMoblile: window.versions && (window.versions.mobile || window.versions.android || window.versions.ios)
     }
   }
 }
