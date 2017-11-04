@@ -46,4 +46,4 @@ export default {
 }
 </script>
 
-<style src="../assets/css/components/AppHeader.css"></style>
+<style src="../assets/css/components/AppHeader.postcss"></style>

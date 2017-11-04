@@ -31,4 +31,4 @@
   }
 </script>
 
-<style src="../assets/css/containers/Home.css"></style>
+<style src="../assets/css/containers/Home.postcss"></style>
