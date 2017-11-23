@@ -9,7 +9,7 @@
 
 <script>
   import Swiper from 'vue-swiper'
-  import ImageLink from '../components/Link'
+  import ImageLink from '../components/ImageLink'
 
   export default {
     name: 'home',
