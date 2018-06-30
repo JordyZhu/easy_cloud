@@ -10,4 +10,4 @@ require('http').createServer(function (request, response) {
         // fileServer.serveFile('dist/index.html', 200, {}, request, response)
         file.serve(request, response);
     }).resume();
-}).listen(7431);
+}).listen(8080);
