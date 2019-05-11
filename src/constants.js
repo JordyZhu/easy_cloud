@@ -1,6 +1,6 @@
-export const APP_NAME = 'Jie\'s Blog'
+export const APP_NAME = 'GZ Blog'
 
-export const MY_NAME = 'Jie Zhu'
+export const MY_NAME = 'Gabriel Zhu'
 
 export const MY_DESC = 'Front-End Software Engineer / Designer'
 
