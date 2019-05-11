@@ -3,51 +3,27 @@
 .AppHeader {
   flex-grow: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-
-  &.AppHeader--fold {
-    background: $blue;
-
-    .AppHeader-content {
-      padding-top: 1.5625em;
-      padding-bottom: 1.5625em;
-    }
-
-    .AppHeader-logo,
-    .AppHeader-link {
-      color: #fff;
-    }
-  }
+  height: 50px;
 }
 
-.AppHeader-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 4.375em 1.5625em;
-  width: 910px;
-}
-
-.AppHeader-logo {
-  line-height: 1.875em;
-  font-size: 1.375em;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: $black;
-}
-
-.AppHeader-right {
+.AppHeader-header {
   display: flex;
   align-items: center;
+  width: 910px;
+  height: 100%;
 }
 
 .AppHeader-tabs {
   display: flex;
   flex-direction: row;
+  height: 50px;
 }
 
 .AppHeader-tab {
+  line-height: 50px;
   font-size: 1em;
 
   & + & {
@@ -71,4 +47,20 @@
   &.router-link-exact-active:hover {
     border-color: $green;
   }
+}
+
+.AppHeader-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 42px 38px;
+  width: 910px;
+}
+
+.AppHeader-logo {
+  line-height: 1.875em;
+  font-size: 1.375em;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: $black;
 }

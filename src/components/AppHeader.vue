@@ -1,19 +1,19 @@
 <template>
   <div class="AppHeader">
+    <div class="AppHeader-header">
+      <ul class="AppHeader-tabs">
+        <li class="AppHeader-tab" v-for="{link, name} in tabs" :key="name">
+          <router-link
+            class="AppHeader-link"
+            v-bind:to="link"
+          >
+            {{ name }}
+          </router-link>
+        </li>
+      </ul>
+    </div>
     <div class="AppHeader-content">
       <router-link class="AppHeader-logo" to="/">{{ name }}</router-link>
-      <div class="AppHeader-right">
-        <ul class="AppHeader-tabs">
-          <li class="AppHeader-tab" v-for="{link, name} in tabs">
-            <router-link
-              class="AppHeader-link"
-              v-bind:to="link"
-            >
-              {{ name }}
-            </router-link>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>

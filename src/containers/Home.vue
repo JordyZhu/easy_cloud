@@ -2,7 +2,6 @@
   <div class="Home">
     <div class="Home-main">
       <div class="Home-banner">
-        <banner />
       </div>
     </div>
   </div>
