@@ -1,4 +1,4 @@
-export const APP_NAME = 'GZ Blog'
+export const APP_NAME = 'Gazu'
 
 export const MY_NAME = 'Gabriel Zhu'
 

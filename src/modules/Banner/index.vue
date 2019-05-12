@@ -23,7 +23,7 @@
       <div class="BannerArticleItem" v-else-if="item.type === 'article'">
         <img v-bind:src="item.headImage" />
       </div>
-      <div class="BannerImageItem" v-else="item.type === 'image'">
+      <div class="BannerImageItem" v-else-if="item.type === 'image'">
         <img v-bind:src="item.url" />
       </div>
     </div>

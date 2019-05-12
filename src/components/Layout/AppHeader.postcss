@@ -1,0 +1,64 @@
+@import "../../assets/css/variables.postcss";
+
+.AppHeader {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background: $theme;
+}
+
+.AppHeader-header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid $commonBorder;
+  width: 100%;
+  height: 50px;
+  z-index: 99;
+}
+
+.AppHeader-headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 910px;
+  height: 50px;
+}
+
+.AppHeader-tabs {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.AppHeader-tab {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+
+  & + & {
+    margin-left: 20px;
+  }
+}
+
+a.AppHeader-link {
+  font-weight: 500;
+  color: $fontBlackLv2;
+
+  &:hover {
+    color: $themeColorLv2;
+  }
+
+  &.router-link-exact-active {
+    color: $fontBlackLv1;
+  }
+
+  &.router-link-exact-active:hover {
+    border-color: $themeColorLv2;
+  }
+}

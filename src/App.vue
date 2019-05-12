@@ -1,12 +1,11 @@
 <template>
   <div id="app" v-bind:class="appClassName">
-    <AppHeader />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader'
+import AppHeader from '@/components/Layout/AppHeader'
 
 export default {
   name: 'app',
