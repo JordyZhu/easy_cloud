@@ -1,0 +1,13 @@
+.PageContent-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 46px 15px 0;
+  width: 910px;
+}
+
+.PageContent-content {
+  flex: 1;
+  margin-top: 38px;
+  width: 100%;
+}

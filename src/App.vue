@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import AppHeader from '@/components/Layout/AppHeader'
+import PageHeader from '@/components/Layout/PageHeader'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    AppHeader
+    PageHeader
   },
   computed: {
     appClassName () {
@@ -39,4 +39,5 @@ export default {
 </script>
 
 <style src="./assets/css/reset.postcss"></style>
-<style src="./assets/css/App.postcss"></style>
+<style src="./assets/css/variables.postcss"></style>
+<style src="./App.postcss"></style>

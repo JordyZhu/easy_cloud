@@ -1,0 +1,23 @@
+@import "../../assets/css/variables.postcss";
+
+.PageHeader {
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  border-bottom: 1px solid $commonBorder;
+  width: 100%;
+  background: $theme;
+  z-index: 99;
+}
+
+.PageHeader-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 910px;
+  height: 50px;
+}

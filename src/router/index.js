@@ -1,35 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '../containers/Index'
-import Home from '../containers/Home'
-import About from '../containers/About'
-import NotFound from '../containers/NotFound'
-import PostCreate from '../containers/Post/Create'
+import PageContainer from '@/containers'
+import Home from '@/containers/Home'
+import About from '@/containers/About'
+import NotFound from '@/containers/NotFound'
+import PostCreate from '@/containers/Post/Create'
 
 Vue.use(Router)
 
 export const routes = [
   {
+    name: 'postCreate',
     path: '/post/create',
     component: PostCreate
   },
   {
     path: '/',
-    component: Index,
+    component: PageContainer,
     children: [
       {
-        path: '',
         name: 'home',
+        path: '',
         component: Home
       },
       {
-        path: '/about',
         name: 'about',
+        path: '/about',
         component: About
       },
       {
-        path: '*',
         name: 'notFound',
+        path: '*',
         component: NotFound
       }
     ]

@@ -1,0 +1,34 @@
+@import "../../assets/css/variables.postcss";
+
+.TabList {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.TabItem {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+
+  & + & {
+    margin-left: 24px;
+  }
+
+  a.TabItem-link {
+    font-weight: 500;
+    color: $fontBlackLv2;
+
+    &:hover {
+      color: $themeColorLv2;
+    }
+
+    &.router-link-exact-active {
+      color: $fontBlackLv1;
+    }
+
+    &.router-link-exact-active:hover {
+      border-color: $themeColorLv2;
+    }
+  }
+}

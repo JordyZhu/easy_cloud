@@ -1,24 +1,30 @@
 <template>
-  <div class="AppMain">
+  <div class="Page">
     <slot name="header">
-      <AppHeader />
+      <PageHeader :tabs="tabs" />
     </slot>
-    <div class="AppContent">
+    <div class="PageContent">
       <slot />
     </div>
-    <div class="AppFooter">
+    <div class="PageFooter">
       <slot name="footer" />
     </div>
   </div>
 </template>
 
 <script>
-import AppHeader from './AppHeader'
+import PageHeader from './PageHeader'
 
 export default {
   name: 'Layout',
+  props: {
+    tabs: {
+      type: Array,
+      default: () => []
+    }
+  },
   components: {
-    AppHeader
+    PageHeader
   }
 }
 </script>

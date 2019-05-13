@@ -1,0 +1,18 @@
+@import "../../assets/css/variables.postcss";
+
+.Button {
+  border: 1px solid $fontBlackLv3;
+  border-radius: 4px;
+  padding: 0 14px;
+  line-height: 32px;
+  font-size: 14px;
+  color: $fontBlackLv3;
+  background: transparent;
+  cursor: pointer;
+}
+
+.Button:disabled {
+  cursor: default;
+  opacity: .5;
+  pointer-events: none;
+}

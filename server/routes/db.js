@@ -18,6 +18,8 @@ module.exports = class DB {
     ).then(client => {
       this.currentClient = client
       return client.db(DB_NAME)
+    }).then(db => {
+      return db.collection(this.collectionName)
     })
   }
 
@@ -25,9 +27,7 @@ module.exports = class DB {
     return (req, res) => {
       const { offset, limit = 100 } = req.query
 
-      this.connect().then(db => {
-        return db.collection(this.collectionName)
-      }).then(collection => {
+      this.connect().then(collection => {
         const queryCommand = collection.find()
 
         if (offset) {
@@ -43,8 +43,26 @@ module.exports = class DB {
         this.close()
         res.send({
           errorCode: 100000,
-          data: { [recordsKey || collectionName]: records }
+          data: { [recordsKey || this.collectionName]: records }
         })
+      }).catch(err => {
+        this.close()
+        res.send({
+          ...SERVER_ERROR_MAP.DB_CONNECT,
+          originalError: err
+        })
+      })
+    }
+  }
+
+  createEntities(entityFormatter) {
+    return (req, res) => {
+      const entities = entityFormatter(req)
+      this.connect().then(collection => {
+        collection[Array.isArray(entities) ? 'insertMany' : 'insertOne'](entities)
+      }).then(res => {
+        this.close()
+        res.status(204)
       }).catch(err => {
         this.close()
         res.send({
