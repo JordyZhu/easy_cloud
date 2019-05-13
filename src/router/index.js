@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '../containers'
+import Index from '../containers/Index'
 import Home from '../containers/Home'
 import About from '../containers/About'
 import NotFound from '../containers/NotFound'
