@@ -12,15 +12,15 @@ import './index.css'
 export default class PageContainer extends Vue {
   tabs = [
     {
-      name: '博文',
+      name: 'Home',
       link: '/'
     },
     {
-      name: '发现',
+      name: 'Explore',
       link: '/explore'
     },
     {
-      name: '关于站长',
+      name: 'About',
       link: '/about'
     }
   ]

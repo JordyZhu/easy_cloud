@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-bind:class="appClassName">
+  <div id="app" :class="appClassName">
     <router-view></router-view>
   </div>
 </template>
@@ -14,7 +14,12 @@ export default {
   },
   computed: {
     appClassName () {
-      return `App-${this.$route.name}`
+      const isMoblile = window.versions && (
+        window.versions.mobile ||
+          window.versions.android ||
+          window.versions.ios
+      )
+      return `App-${this.$route.name}${isMoblile ? ' is-mobile' : ''}`
     },
     versions () {
       const u = window.navigator.userAgent

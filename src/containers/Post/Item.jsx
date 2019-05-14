@@ -14,9 +14,9 @@ export default class PostItem extends Vue {
           <img src={headImage} />
         </div>
         <div class="PostItem-content">
-          <h2 class="PostItem-title">
+          <h1 class="PostItem-title">
             <router-link to={`/post/${this.post._id}`}>{this.post.title}</router-link>
-          </h2>
+          </h1>
           <div class="PostItem-meta">
             发布于 {moment(Number(this.post.createdAt)).format('YYYY-MM-DD HH:mm')}
           </div>

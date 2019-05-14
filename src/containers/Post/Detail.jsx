@@ -1,9 +1,24 @@
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 import marked from 'marked'
+import hljs from 'highlight.js'
 import 'github-markdown-css/github-markdown.css'
+import 'highlight.js/styles/atom-one-dark.css'
 import headImage from '@/assets/img/default.jpg'
 import { fetchPost } from '@/services/post'
 import './Detail.postcss'
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  highlight: code => hljs.highlightAuto(code).value,
+  pedantic: false,
+  gfm: true,
+  tables: true,
+  breaks: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+})
 
 @Component()
 export default class PostDetail extends Vue {
@@ -29,9 +44,9 @@ export default class PostDetail extends Vue {
           <img src={headImage} />
         </div>
         <div class="PostDetail-content">
-          <h2 class="PostDetail-title">
+          <h1 class="PostDetail-title">
             {this.post.title}
-          </h2>
+          </h1>
           <article
             class="PostDetail-body markdown-body"
             domPropsInnerHTML={bodyHTML}
