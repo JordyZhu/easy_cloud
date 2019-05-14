@@ -11,3 +11,8 @@ export const fetchPosts = query => createRequest({
   query
 })
 
+export const fetchPost = query => createRequest({
+  endpoint: '/api/v1/post',
+  query
+})
+

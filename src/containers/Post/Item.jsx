@@ -1,5 +1,5 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import { markdown } from 'markdown'
+import moment from 'moment'
 import headImage from '@/assets/img/default.jpg'
 import './Item.postcss'
 
@@ -8,14 +8,6 @@ export default class PostItem extends Vue {
   @Prop({ type: Object, default: {} }) post
 
   render() {
-    const bodyHTML = markdown.renderJsonML(
-      markdown.toHTMLTree(
-        markdown.parse(
-          this.post.body
-        ).slice(0, 5)
-      )
-    )
-
     return (
       <div class="PostItem">
         <div class="PostItem-header">
@@ -25,11 +17,12 @@ export default class PostItem extends Vue {
           <h2 class="PostItem-title">
             <router-link to={`/post/${this.post._id}`}>{this.post.title}</router-link>
           </h2>
-          <div
-            class="PostItem-body"
-            domPropsInnerHTML={bodyHTML}
-          >
+          <div class="PostItem-meta">
+            发布于 {moment(Number(this.post.createdAt)).format('YYYY-MM-DD HH:mm')}
           </div>
+          <article class="PostItem-body">
+            {this.post.body}
+          </article>
         </div>
       </div>
     )

@@ -1,7 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import { fetchPosts } from '@/services/post'
 import PostItem from './Post/Item'
-import 'github-markdown-css/github-markdown.css'
 import './Home.postcss'
 
 @Component({

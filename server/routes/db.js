@@ -1,5 +1,5 @@
 /* eslint-disable space-before-function-paren */
-const { MongoClient } = require('mongodb')
+const { MongoClient, ObjectId } = require('mongodb')
 const { DB_NAME, SERVER_ERROR_MAP } = require('../constants')
 
 module.exports = class DB {
@@ -21,6 +21,26 @@ module.exports = class DB {
     }).then(db => {
       return db.collection(this.collectionName)
     })
+  }
+
+  getEntity(queryParser) {
+    return (req, res) => {
+      const query = queryParser ? queryParser(req.query) : req.query
+
+      if (query._id) {
+        query._id = ObjectId(query._id)
+      }
+
+      this.connect().then(
+        collection => collection.find(query).toArray()
+      ).then(array => {
+        this.close()
+        res.send({
+          errorCode: 100000,
+          data: array && array[0] || {}
+        })
+      })
+    }
   }
 
   getEntities(recordsKey, query = '{}', requiredKeys) {
@@ -62,7 +82,7 @@ module.exports = class DB {
       const entities = entityFormatter(req)
       this.connect().then(collection => {
         collection[Array.isArray(entities) ? 'insertMany' : 'insertOne'](entities)
-      }).then(res => {
+      }).then(() => {
         this.close()
         res.send({
           errorCode: 100000
