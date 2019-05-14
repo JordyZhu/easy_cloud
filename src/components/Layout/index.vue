@@ -29,5 +29,5 @@ export default {
 }
 </script>
 
-<style src="./Index.postcss"></style>
+<style src="./index.postcss"></style>
 
