@@ -4,6 +4,7 @@ import PageHeader from '@/components/Layout/PageHeader'
 import AppLogo from '@/components/AppLogo'
 import Button from '@/components/Button'
 import Input from '@/components/Form/Input'
+import { createPost } from '@/services/post'
 import './Create.postcss'
 
 @Component({
@@ -33,16 +34,13 @@ export default class PostCreate extends Vue {
       return
     }
 
-    this.$http.post('/api/v1/post/add', {
+    createPost({
       type: this.type,
       title: this.title,
       body: this.body,
       createdAt: new Date().getTime()
-    }, {
-      responseType: 'json',
-      emulateJSON: true
-    }).then(res => {
-      console.log(res)
+    }).then(() => {
+      this.$router.push('/')
     })
   }
 

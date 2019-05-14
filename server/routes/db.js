@@ -23,23 +23,25 @@ module.exports = class DB {
     })
   }
 
-  getEntities(recordsKey) {
+  getEntities(recordsKey, query = '{}', requiredKeys) {
     return (req, res) => {
-      const { offset, limit = 100 } = req.query
+      const { offset, limit = 100, order } = req.query
 
-      this.connect().then(collection => {
-        const queryCommand = collection.find()
-
-        if (offset) {
-          queryCommand.skip(offset)
-        }
-
-        if (limit) {
-          queryCommand.limit(limit)
-        }
-
-        return queryCommand.toArray()
-      }).then(records => {
+      this.connect().then(
+        collection => collection.find(
+          JSON.parse(query),
+          requiredKeys ? requiredKeys.split(',').reduce(
+            (result, key) => ({ ...result, [key]: 1 }),
+            {}
+          ) : null
+        ).sort(
+          order ? JSON.parse(order) : { createdAt: -1 }
+        ).skip(
+          offset ? Number(offset) : 0
+        ).limit(
+          limit ? Number(limit) : 100
+        ).toArray()
+      ).then(records => {
         this.close()
         res.send({
           errorCode: 100000,
@@ -62,7 +64,9 @@ module.exports = class DB {
         collection[Array.isArray(entities) ? 'insertMany' : 'insertOne'](entities)
       }).then(res => {
         this.close()
-        res.status(204)
+        res.send({
+          errorCode: 100000
+        })
       }).catch(err => {
         this.close()
         res.send({
@@ -78,7 +82,7 @@ module.exports = class DB {
       this.currentClient.close().then(() => {
         this.currentClient = null
       }).catch(() => {
-
+        this.currentClient.close()
       })
     }
   }
