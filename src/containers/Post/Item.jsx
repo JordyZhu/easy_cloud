@@ -1,6 +1,5 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import moment from 'moment'
-import headImage from '@/assets/img/default.jpg'
 import './Item.postcss'
 
 @Component
@@ -11,7 +10,7 @@ export default class PostItem extends Vue {
     return (
       <div class="PostItem">
         <div class="PostItem-header">
-          <img src={headImage} />
+          <img src={this.post.headImage || require(`@/assets/img/cover-${this.post.type}.png`)} />
         </div>
         <div class="PostItem-content">
           <h1 class="PostItem-title">

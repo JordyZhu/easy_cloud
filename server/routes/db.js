@@ -55,7 +55,7 @@ module.exports = class DB {
             {}
           ) : null
         ).sort(
-          order ? JSON.parse(order) : { createdAt: -1 }
+          order ? JSON.parse(order) : { _id: -1 }
         ).skip(
           offset ? Number(offset) : 0
         ).limit(

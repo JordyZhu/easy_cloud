@@ -3,7 +3,6 @@ import marked from 'marked'
 import hljs from 'highlight.js'
 import 'github-markdown-css/github-markdown.css'
 import 'highlight.js/styles/atom-one-dark.css'
-import headImage from '@/assets/img/default.jpg'
 import { fetchPost } from '@/services/post'
 import './Detail.postcss'
 
@@ -41,7 +40,7 @@ export default class PostDetail extends Vue {
     return (
       <div class="PostDetail">
         <div class="PostDetail-header">
-          <img src={headImage} />
+          <img src={this.post.headImage || require(`@/assets/img/cover-${this.post.type}.png`)} />
         </div>
         <div class="PostDetail-content">
           <h1 class="PostDetail-title">

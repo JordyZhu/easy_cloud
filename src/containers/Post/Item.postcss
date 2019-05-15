@@ -3,8 +3,10 @@
 .PostItem {
   display: flex;
   flex-direction: column;
-  width: 880px;
   align-items: center;
+  position: relative;
+  width: 880px;
+  overflow: hidden;
 }
 
 .PostItem-header {
@@ -12,8 +14,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: $placeholderBack;
+  width: 100%;
+  background: rba(226, 80 ,93, .5);
   overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 }
 
 .PostItem-content {
