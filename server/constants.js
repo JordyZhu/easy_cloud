@@ -1,5 +1,3 @@
-const DB_NAME = `gzblog-${process.env.NODE_ENV}`
-
 const SERVER_ERROR_MAP = {
   DB_CONNECT: {
     errorCode: 100100,
@@ -12,6 +10,5 @@ const SERVER_ERROR_MAP = {
 }
 
 module.exports = {
-  DB_NAME,
   SERVER_ERROR_MAP
 }

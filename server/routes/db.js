@@ -1,6 +1,8 @@
 /* eslint-disable space-before-function-paren */
 const { MongoClient, ObjectId } = require('mongodb')
-const { DB_NAME, SERVER_ERROR_MAP } = require('../constants')
+const { SERVER_ERROR_MAP } = require('../constants')
+
+const DB_NAME = `gzblog-${process.env.NODE_ENV}`
 
 module.exports = class DB {
   constructor(collectionName) {
