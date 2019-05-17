@@ -38,6 +38,16 @@
 
 .PostDetail-body {
   margin: 24px 0;
-  line-height: 24px;
   overflow: hidden;
+
+  ol,
+  ol li,
+  ul,
+  ul li {
+    list-style: inherit;
+  }
+
+  & > ol > li {
+    list-style: decimal;
+  }
 }
