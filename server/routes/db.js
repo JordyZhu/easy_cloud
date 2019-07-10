@@ -15,7 +15,7 @@ module.exports = class DB {
 
   connect() {
     return MongoClient.connect(
-      'mongodb://gzblog:Gz_1234@172.104.83.207:27017/test',
+      'mongodb://Gabriel_Zhu:Gz_80681782@172.104.83.207:27017/test',
       { useNewUrlParser: true }
     ).then(client => {
       this.currentClient = client
